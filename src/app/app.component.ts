@@ -2,9 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <app-my-component
+      [(amount)]="amount">
+    </app-my-component>
+    total: {{amount}}
+  `,
 })
 export class AppComponent {
-  title = 'my-awesome-app';
+  amount = 100;
 }
