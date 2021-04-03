@@ -1,0 +1,5 @@
+<app-child [amount]="amount" (amountChange)="amount = $event"></app-child>
+total: {{ amount }}
+<hr>
+<app-child [(amount)]="amount2WayDataBinding"></app-child>
+total: {{ amount2WayDataBinding }}

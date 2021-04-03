@@ -1,1 +1,21 @@
-<p>directives-structural works!</p>
+<button (click)="toogleVisibilityList()"> Toggle List </button>
+<p>Switch --> value: {{list}}</p>
+<ul [ngSwitch]="list">
+  <ng-container *ngSwitchCase="'animals'">
+    <li *ngFor="let animal of animals">
+      {{ animal }}
+    </li>
+  </ng-container>
+  <ng-container *ngSwitchCase="'fruits'">
+    <li *ngFor="let fruit of fruits">
+      {{ fruit.name }} - {{fruit.quantity}}
+    </li>
+  </ng-container>
+</ul>
+<hr>
+<p>If --> value: {{list === 'fruits'}}</p>
+<ul *ngIf="list === 'fruits'">
+  <li *ngFor="let fruit of fruits">
+    {{ fruit.name }} - {{fruit.quantity}}
+  </li>
+</ul>
